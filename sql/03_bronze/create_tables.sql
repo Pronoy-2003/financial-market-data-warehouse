@@ -34,3 +34,9 @@ CREATE TABLE bronze.stock_price_raw
         PRIMARY KEY (bronze_id)
 );
 GO
+
+-- Add a unique constraint
+ALTER TABLE bronze.stock_price_raw
+ADD CONSTRAINT UQ_bronze_stock_price
+UNIQUE (symbol, observation_date);
+GO
