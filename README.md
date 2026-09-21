@@ -263,8 +263,17 @@ The project is intentionally focused on **data engineering and data warehousing 
 ```text
 financial-market-data-warehouse/
 │
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── .env.example
+│
+├── config/
+│   └── stocks.json
+│
 ├── data/
 │   └── sample/
+│       └── AAPL_raw.json
 │
 ├── docs/
 │   ├── images/
@@ -282,25 +291,47 @@ financial-market-data-warehouse/
 │   └── setup.md
 │
 ├── sql/
-│   ├── bronze/
-│   ├── silver/
-│   ├── gold/
-│   └── validation/
+│   │
+│   ├── 01_database/
+│   │   └── create_database.sql
+│   │
+│   ├── 02_schemas/
+│   │   └── create_schemas.sql
+│   │
+│   ├── 03_bronze/
+│   │   ├── create_tables.sql
+│   │   └── ingestion_log.sql
+│   │
+│   ├── 04_silver/
+│   │   ├── create_tables.sql
+│   │   └── load_silver.sql
+│   │
+│   ├── 05_gold/
+│   │   ├── create_dimensions.sql
+│   │   ├── create_fact.sql
+│   │   ├── load_dimensions.sql
+│   │   ├── load_fact.sql
+│   │   └── load_all.sql
+│   │
+│   ├── 06_views/
+│   │   └── analytical_views.sql
+│   │
+│   └── 07_validation/
+│       └── data_quality_checks.sql
 │
-├── src/
-│   ├── main.py
-│   ├── ingestion.py
-│   ├── bronze_loader.py
-│   ├── warehouse_transform.py
-│   ├── gold_loader.py
-│   ├── daily_validation.py
-│   ├── sql_server.py
-│   └── ...
-│
-├── .env.example
-├── .gitignore
-├── requirements.txt
-└── README.md
+└── src/
+    ├── __init__.py
+    ├── api_client.py
+    ├── bronze_loader.py
+    ├── data_parser.py
+    ├── database.py
+    ├── gold_loader.py
+    ├── ingestion.py
+    ├── main.py
+    ├── silver_loader.py
+    ├── test_api.py
+    ├── test_database.py
+    └── warehouse_validation.py
 ```
 
 ---
