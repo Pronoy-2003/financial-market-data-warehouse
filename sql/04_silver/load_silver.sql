@@ -1,5 +1,5 @@
 /*
-    File: silver_procedure.sql
+    File: load_silver.sql
 
     Purpose:
     Creates the Silver-layer transformation procedure that cleans,
