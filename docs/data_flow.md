@@ -4,43 +4,7 @@
 
 The Financial Market Data Warehouse follows a **Bronze → Silver → Gold** data flow.
 
-```text
-Alpha Vantage API
-       │
-       ▼
-Python Data Extraction
-       │
-       ▼
-┌─────────────────────┐
-│   Bronze Layer      │
-│ Raw Market Data     │
-└─────────────────────┘
-       │
-       ▼
-┌─────────────────────┐
-│   Silver Layer      │
-│ Cleaned & Standardized│
-└─────────────────────┘
-       │
-       ▼
-┌──────────────────────────────┐
-│        Gold Layer            │
-│                              │
-│ dim_company                  │
-│ dim_market                   │
-│ dim_date                     │
-│ fact_stock_price             │
-└──────────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────┐
-│      Analytical Views        │
-│                              │
-│ vw_stock_daily_performance   │
-│ vw_company_performance       │
-│ vw_market_performance        │
-└──────────────────────────────┘
-```
+![Data Architecture](images/data_flow.png)
 
 ## 1. Data Source
 
@@ -130,18 +94,6 @@ The Silver layer is the source for the Gold loading procedures.
 
 The Gold layer transforms Silver data into a dimensional warehouse model.
 
-```text
-                  Silver
-                    │
-        ┌───────────┼───────────┐
-        ▼           ▼           ▼
-  dim_company   dim_market   dim_date
-        │           │           │
-        └───────────┼───────────┘
-                    ▼
-             fact_stock_price
-```
-
 The Gold layer contains:
 
 - `gold.dim_company`
@@ -202,47 +154,7 @@ The pipeline displays the actual validation results in the terminal.
 
 ## 8. Complete Pipeline Flow
 
-```text
-┌────────────────────┐
-│  Alpha Vantage API │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ Python Extraction  │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│  Bronze Layer      │
-│  Raw Data          │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│  Silver Layer      │
-│  Cleaned Data      │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│   Gold Star Schema │
-│ Dimensions + Fact  │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ Analytical Views   │
-└─────────┬──────────┘
-          │
-          ▼
-┌────────────────────┐
-│ Data Quality       │
-│ Validation         │
-└─────────┬──────────┘
-          │
-       PASS / FAIL
-```
+![Data Architecture](images/data_flow.png)
 
 ## Pipeline Responsibility
 
