@@ -1,3 +1,12 @@
+/*
+    File: stocks.json
+
+    Purpose:
+    Stores the list of stocks configured for market-data ingestion,
+    including each stock's symbol, company name, and sector.
+*/
+
+
 {
     "stocks": [
         {
