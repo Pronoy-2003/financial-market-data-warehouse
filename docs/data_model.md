@@ -11,17 +11,7 @@ The model contains:
 
 ## Star Schema
 
-```text
-                         gold.dim_company
-                               |
-                               | company_key
-                               |
-                               v
-gold.dim_market ------> gold.fact_stock_price <------ gold.dim_date
-       |                       ^                         |
-       | market_key             | date_key              |
-       +-----------------------+-------------------------+
-```
+![Data Architecture](images/data_model.png)
 
 ## Fact Table
 
@@ -143,11 +133,7 @@ fact_stock_price.date_key
 
 All three dimensions have a **one-to-many relationship** with the fact table.
 
-```text
-dim_company (1) ────────< fact_stock_price
-dim_market  (1) ────────< fact_stock_price
-dim_date    (1) ────────< fact_stock_price
-```
+
 
 ## Analytical Views
 
