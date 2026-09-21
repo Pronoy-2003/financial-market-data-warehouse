@@ -8,7 +8,7 @@ The project is primarily designed to demonstrate **data warehousing, ETL/ELT, SQ
 
 ## Architecture
 
-![Financial Market Data Warehouse Architecture](images/architecture.png)
+![Financial Market Data Warehouse Architecture](images/project_architecture.png)
 
 ## End-to-End Flow
 
