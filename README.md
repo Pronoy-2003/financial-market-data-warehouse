@@ -411,3 +411,13 @@ The `.env` file should never be committed to GitHub.
 **Tools**
 
 `Python` · `SQL Server` · `T-SQL` · `Alpha Vantage API` · `Git` · `GitHub`
+
+---
+
+## 🔮 Future Enhancements
+
+- **Automated Scheduling:** Schedule daily pipeline execution to keep market data updated automatically.
+- **Enhanced Data Quality:** Add more validation rules and anomaly detection for stock prices and trading volumes.
+- **Pipeline Monitoring & Alerts:** Implement logging, execution-time tracking, and notifications for pipeline failures.
+- **Expanded Market Coverage:** Integrate additional stocks, exchanges, and financial data sources.
+- **Performance Optimization:** Optimize SQL queries, indexing, and incremental loading to improve warehouse performance as data grows.
