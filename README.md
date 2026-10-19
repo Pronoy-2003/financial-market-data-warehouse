@@ -135,7 +135,7 @@ This project focuses on building the data foundation for analysis rather than cl
 - Duplicate-prevention logic avoids repeatedly inserting existing symbol-date records during normal sequential runs.
 - Automated quality checks can identify invalid records and prevent a failed validation from being reported as a successful run.
 
-## Dashboard / Model / Output
+## Output
 
 **This project does not include a dashboard.** Its main output is a SQL Server data warehouse with analytical views and automated data-quality validation.
 
@@ -143,21 +143,19 @@ This project focuses on building the data foundation for analysis rather than cl
 
 ![High-Level Architecture](docs/images/project_architecture.png)
 
-*Shows the Alpha Vantage API, Python ETL orchestration, SQL Server Bronze/Silver/Gold layers, and data-quality validation.*
+
 
 ### 2. Data Flow (Data Lineage)
 
 ![Data Flow](docs/images/data_flow.png)
 
-*Shows how stock data moves from the source through Bronze and Silver into the Gold dimensional model and analytical consumers.*
+
 
 ### 3. Gold Layer Data Model (Star Schema)
 
 ![Gold Layer Star Schema](docs/images/data_model.png)
 
-*Shows the stock-price fact table and its relationships with the company, market, and date dimensions.*
 
-> Add the three image files to `docs/images/` using the filenames shown above so the images render correctly on GitHub.
 
 ## How to Run This Project
 
@@ -300,11 +298,11 @@ financial-market-data-warehouse/
 
 ## Author and Contact
 
-**Author:** Pronoy Sonowal
+**Author:** Pronoy Pryunkush Sonowal
 
-- **GitHub:** [Add your GitHub profile or repository link]
-- **LinkedIn:** [Add your LinkedIn profile URL]
-- **Email:** [Add your professional email address]
+-   **GitHub:** https://github.com/Pronoy-2003
+-   **LinkedIn:** www.linkedin.com/in/pronoy-pryunkush-sonowal
+-   **Email:** pronoypryunkushsonowal2002@gmail.com
 
 ---
 
